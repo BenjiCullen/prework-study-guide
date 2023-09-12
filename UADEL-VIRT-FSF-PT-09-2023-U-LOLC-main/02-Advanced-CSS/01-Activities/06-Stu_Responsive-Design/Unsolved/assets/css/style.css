@@ -1,0 +1,109 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  margin: 0;
+}
+
+header {
+  padding: 40px;
+  text-align: center;
+  background: #13293d;
+  color: #fff;
+}
+
+/* 
+What happens when we set the display property to flex? 
+TODO: It will automatically set any assets that is affected by the class 'nav' to all be set side by side of each other and also reactive on the size of the webpage
+All child assets will become flex elements
+*/
+nav {
+  display: flex;
+  background-color: #d8a47f;
+}
+
+nav a {
+  color: #13293d;
+  padding: 14px 20px;
+  text-decoration: none;
+  text-align: center;
+}
+
+/* 
+What is the flex-wrap property? 
+TODO: The flex wrap property allows the assets to 'wrap' around itself as the side of the webpage continues to grow or shrink. It was also change the shapes of the assets independently of each other depending on where they are situated to eachother.
+*/
+main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+aside {
+  flex: 1;
+  background-color: #b9c6ae;
+  padding: 80px;
+  text-align: center;
+}
+
+
+footer {
+  padding: 20px;
+  text-align: center;
+  background: #13293d;
+  color: #fff;
+}
+
+/* 
+What does the justify-content property do? 
+TODO: this gives the flex code the ability to place the assets affected by the class element where ever it needs. For example below all the assets no matter how big the screen is set to will alwasys be in the centre of the page
+you can even have a 'line-break' or anything really to do with orientation of the assets
+*/
+.products {
+  flex: 4;
+  background-color: #fff;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* 
+What is the flex property a shorthand property for?
+What is it doing here? 
+TODO: It is to either Grow (first number 0) Shrink (Second number 0) or to show the min size of the asset or base(400px) 
+You can do a short cut by simplily placing a 1 instead of all the other digits so auto set the asset to 1 1 1, or 23 to make it 23 23 23 etc.
+*/
+.card {
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  padding: 10px;
+  flex: 0 0 400px;
+}
+
+.card header {
+  padding: 20px;
+}
+
+.card p {
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+}
+
+/* 
+What does the flex-direction property define?
+What is it doing here? 
+TODO: It defines the max width of the page until the main & nav changes 
+It is going to change the color of the main and get the nav to start flex-wrapping 
+*/
+@media screen and (max-width: 768px) {
+  main,
+  nav {
+    flex-direction: column;
+  }
+}
